@@ -5,18 +5,15 @@
     border: 0px solid lightgray;
 	margin: 2px 2px 2px 2px;
     width:100%;
-    height:  425px;
-    padding-top: 0 !important; 
-    height: 425px !important; 
-    background-color: #fdf6e3;
-    }
+    height:100%;
+}
 
 #editor { 
+    margin: 2px;
+    width: 600px;
+    height: 400px;
     overflow: scroll;
     resize:both;
-    display: inline-block;
-     width: 99%;
-     height:  412.312px;
 }
 
 #runFrame {
@@ -48,63 +45,21 @@
 	font-family: 'Dosis', sans-serif;
 	margin: 5px;
 }
-
-@media screen and (max-width: 815px) {
-    #centralarea {
-    position:relative;
-    float:left;
-    clear: both;
-    display:flex;
-    flex-direction:column;
-} 
- 
-    };
-
-    @media screen and (min-width: 815px) {
-        #centralarea {
+#centralarea {
     position:relative;
     float:left;
     clear: both;
     display:flex;
     flex-direction:row;
 } 
-}
 
-@media screen and (max-width: 815px) {
-    #runDiv {
+#runDiv {
      display: inline-block;
-     width: 100%;
-     height:  400px;
-     background-color: black;
-     color: white;
 }
-} 
- 
-
-    @media screen and (min-width: 815px) {
-        #runDiv {
-     display: inline-block;
-     height:  420px;
-     background-color: black;
-     color: white;
-     width: 49% !important;
-}
-} 
 
 
-@media screen and (max-width: 815px) {
-    #interactiveDiv {
+#interactiveDiv {
     display: inline-block;
-    width: 100% !important;
-}
-} 
- 
-
-    @media screen and (min-width: 815px) {
-        #interactiveDiv {
-    display: inline-block;
-    width: 50% !important;
-}
 }
 
 
@@ -113,10 +68,6 @@
     float:left;
     clear: both;
     display: none;
-}
-
-.ace_content {
-    background-color: #fdf6e3 !important;
 }
 </style>
 <link href="https://fonts.googleapis.com/css?family=Dosis:500" rel="stylesheet">
@@ -149,34 +100,34 @@
 <body>
 
 <div id="header">
-	<h2 style="color: rgb(2, 2, 139);" class="title"> <span>Funinnov</span> <span style="position: absolute; right: 10px;" span>Python/Processing Editor</span> </h2>
+	<h2 class="title"> <a style="text-decoration: none;" href="https://github.com/esperanc/brythonide">Python/Processing Editor</a></h2>
 </div>
 
 <div id="topmenu">
 	<div class="frame">
-    <!-- <button id="new" class="button" onclick="newProgram()">New</button> -->
+    <button id="new" class="button" onclick="newProgram()">New</button>
     <button id="run" class="button" onclick="runProgram()">Run</button>
-	<!-- <button id="clear" class="button" onclick="clearProgram()">Clear</button>
+	<button id="clear" class="button" onclick="clearProgram()">Clear</button>
 	<button id="stop" class="button" onclick="stopProgram()">Stop</button>
     <button id="toggleConsole" class="button" onclick="toggleConsole()">Console</button>
  	<label class="button" for="loadfile">Upload</label>
     <input type="file" id="loadfile" name="files[]" style="visibility:hidden;display:none;" onchange="loadit(this)"></input>
 	<label class="button" onclick="saveit()">Download as</label>
-    <input id="savefilename" type="text" value="program.py"/> -->
+    <input id="savefilename" type="text" value="program.py"/>
 	</div>
 </div>
 
-<div style="width: 100%;" id="centralarea" >
+<div id="centralarea" >
+    <div id="runDiv"></div>
     <div id="interactiveDiv">
         <iframe id="consoleIframe" src="./console.html" 
-                style="border:none; overflow:hidden; display:none;"
+                style="margin:0; border:none; overflow:hidden; display:none;"
                 scrolling="no" onload="adjustIframeOnLoad()" ></iframe>
              
     	<div id="sourceArea" >
-    		<pre style="margin-top: 0 !important;" id="editor" ></pre>   
+    		<pre id="editor" ></pre>   
     	</div>
     </div>
-    <div id="runDiv"></div>
 </div>
 
 <div id="footer" class="frame">
