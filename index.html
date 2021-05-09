@@ -69,6 +69,10 @@
     clear: both;
     display: none;
 }
+
+.ace_content {
+    background-color: #fdf6e3 !important;
+}
 </style>
 <link href="https://fonts.googleapis.com/css?family=Dosis:500" rel="stylesheet">
 <script src="lz-string.js"></script>
@@ -105,20 +109,19 @@
 
 <div id="topmenu">
 	<div class="frame">
-    <button id="new" class="button" onclick="newProgram()">New</button>
+    <!-- <button id="new" class="button" onclick="newProgram()">New</button> -->
     <button id="run" class="button" onclick="runProgram()">Run</button>
-	<button id="clear" class="button" onclick="clearProgram()">Clear</button>
+	<!-- <button id="clear" class="button" onclick="clearProgram()">Clear</button>
 	<button id="stop" class="button" onclick="stopProgram()">Stop</button>
     <button id="toggleConsole" class="button" onclick="toggleConsole()">Console</button>
  	<label class="button" for="loadfile">Upload</label>
     <input type="file" id="loadfile" name="files[]" style="visibility:hidden;display:none;" onchange="loadit(this)"></input>
 	<label class="button" onclick="saveit()">Download as</label>
-    <input id="savefilename" type="text" value="program.py"/>
+    <input id="savefilename" type="text" value="program.py"/> -->
 	</div>
 </div>
 
 <div id="centralarea" >
-    <div id="runDiv"></div>
     <div id="interactiveDiv">
         <iframe id="consoleIframe" src="./console.html" 
                 style="margin:0; border:none; overflow:hidden; display:none;"
@@ -128,6 +131,7 @@
     		<pre id="editor" ></pre>   
     	</div>
     </div>
+    <div id="runDiv"></div>
 </div>
 
 <div id="footer" class="frame">
